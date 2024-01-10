@@ -1,10 +1,14 @@
 // style
-import './Footer.css'
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <div className="footer">
+      <div className="footer-container container">
+        <p>All Right Reserved. <a href="https://github.com/abdullohmirzayev">Abdulloh Mirzayev</a></p>
+      </div>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;
