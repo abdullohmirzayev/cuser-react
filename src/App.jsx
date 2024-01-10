@@ -28,6 +28,14 @@ function App() {
     if (e.key === "Escape") setShowModal(false);
   };
 
+  // add user
+  const addUser = (user) => {
+    setUsers((prev) => {
+      return [...prev, user];
+    });
+    setShowModal(false);
+  };
+
   return (
     <div onClick={closeModal} onKeyDown={closeModal} className="App">
       <Navbar usersLength={users.length} />
@@ -37,7 +45,7 @@ function App() {
         </div>
         <UserList users={users} deleteUser={deleteUser} />
       </main>
-      {showModal && <NewUserForm />}
+      {showModal && <NewUserForm addUser={addUser} />}
       <button onClick={() => setShowModal(true)} className="create-user">
         Create User
       </button>
@@ -47,14 +55,3 @@ function App() {
 }
 
 export default App;
-
-// {
-//   id: 1,
-//   image: "https://picsum.photos/400?random=1",
-//   firstName: "Abdulloh",
-//   lastName: "Mirzayev",
-//   age: 17,
-//   from: "Uzbekistan",
-//   job: "Frontend Develoer",
-//   gender: "Male",
-// }
